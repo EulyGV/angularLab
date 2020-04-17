@@ -2,16 +2,18 @@
 
 <!-- *ngFores una "directiva estructural"-->
 
-<div *ngFor="let product of products">
+<div *ngFor="let product of products; index as productId">
    <h3>
-     <!--Para hacer que cada nombre de producto sea un enlace a los detalles del producto, utilizando la [ ]sintaxis de enlace de propiedad-->
+     <!--Para hacer que cada nombre de producto sea un enlace a los detalles del producto, utilizando la [ ]sintaxis de enlace de propiedad
      <a [title]="product.name + ' details'">
       {{ product.name }}
 
-      <!--{{ product.name }} //Interpolación {{ }} permite representar el valor de la propiedad como texto--> 
+      <!--{{ product.name }} //Interpolación {{ }} permite representar el valor de la propiedad como texto
 
-     </a>
-      
+     </a>-->
+      <a [title]="product.name + ' details'" [routerLink]="['/products', productId]">
+      {{ product.name }}
+    </a>
 
       <!-- *ngIf<p>, se usa para que se cree el elemento si el producto actual tiene una descripción -->
 
