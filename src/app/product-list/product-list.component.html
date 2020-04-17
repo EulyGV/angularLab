@@ -24,6 +24,10 @@
   <button (click)="share()"> <!-- El enlace de eventos utiliza ( )alrededor del evento -->
     Share
   </button>
+  <app-product-alerts
+  [product]="product" 
+  (notify)="onNotify()">
+</app-product-alerts>
   </h3>
 </div>
 
