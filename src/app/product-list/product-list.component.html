@@ -1,0 +1,36 @@
+<h2>Products</h2>
+
+<!-- *ngFores una "directiva estructural"-->
+
+<div *ngFor="let product of products">
+   <h3>
+     <!--Para hacer que cada nombre de producto sea un enlace a los detalles del producto, utilizando la [ ]sintaxis de enlace de propiedad-->
+     <a [title]="product.name + ' details'">
+      {{ product.name }}
+
+      <!--{{ product.name }} //Interpolación {{ }} permite representar el valor de la propiedad como texto--> 
+
+     </a>
+      
+
+      <!-- *ngIf<p>, se usa para que se cree el elemento si el producto actual tiene una descripción -->
+
+      <p *ngIf="product.description">
+    Description: {{ product.description }}
+  </p>
+
+<!-- Se agregue un botón para que los usuarios puedan compartir un producto con amigos -->
+
+  <button (click)="share()"> <!-- El enlace de eventos utiliza ( )alrededor del evento -->
+    Share
+  </button>
+
+  </h3>
+</div>
+
+
+<!-- 
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+-->
